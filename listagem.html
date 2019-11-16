@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Template Bootstrap</title>
+  <title>Projeto de Web: Posts</title>
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
@@ -33,6 +33,28 @@
           </form>
         </div>
       </nav>
+
+      <div class="jumbotron d-flex justify-content-center" style="text-align: center">
+        <form>
+                <div class="form-group">
+                    <label for="inputId">Insira o ID</label>
+                    <input type="id" class="form-control" id="inputId" aria-describedby="idHelp" placeholder="ID do Post">
+                    <small id="idHelp" class="form-text text-muted">o Id é único para cada Post</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputTitle">Insira o Titúlo do Post</label>
+                    <input type="title" class="form-control" id="inputTitle" placeholder="Titulo do Post">
+                </div>
+                <div class="form-group">
+                    <label for="inputAuthor">Insira o Autor do Post</label>
+                    <input type="author" class="form-control" id="inputAuthor" placeholder="Autor do Post">
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            
+        </form>
+    </div>
 
   <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="./node_modules/popper.js/dist/popper.min.js"></script>
