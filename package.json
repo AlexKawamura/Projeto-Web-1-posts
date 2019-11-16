@@ -1,0 +1,26 @@
+{
+  "name": "Projeto-Web-1-posts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arumawak/Projeto-Web-1-posts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arumawak/Projeto-Web-1-posts/issues"
+  },
+  "homepage": "https://github.com/Arumawak/Projeto-Web-1-posts#readme"
+}
