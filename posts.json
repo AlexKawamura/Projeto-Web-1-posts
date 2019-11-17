@@ -1,6 +1,59 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" },
-    { "id": 2, "title": "another post", "author": "Mike" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "another post",
+      "author": "Mike"
+    },
+    {
+      "title": "teste",
+      "author": "vai",
+      "id": 3
+    },
+    {
+      "title": "teste",
+      "author": "teste",
+      "id": 4
+    },
+    {
+      "title": "post",
+      "author": "sam",
+      "id": 5
+    },
+    {
+      "title": "post",
+      "author": "Samee",
+      "id": 6
+    },
+    {
+      "title": "Testando",
+      "author": "Lorena",
+      "id": 7
+    },
+    {
+      "title": "teste",
+      "author": "agora",
+      "id": 8
+    },
+    {
+      "title": "sweetalert",
+      "author": "eu",
+      "id": 9
+    },
+    {
+      "title": "aquele",
+      "author": "ao vivo",
+      "id": 10
+    },
+    {
+      "title": "Pão",
+      "author": "Neia",
+      "id": 11
+    }
   ]
 }
