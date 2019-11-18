@@ -1,6 +1,14 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" },
-    { "id": 2, "title": "another post", "author": "Mike" }
+    {
+      "title": "teste",
+      "author": "teste",
+      "id": 1
+    },
+    {
+      "title": "teste2",
+      "author": "teste2",
+      "id": 2
+    }
   ]
 }
