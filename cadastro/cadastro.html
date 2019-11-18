@@ -6,6 +6,7 @@
   <title>Projeto de Web: Posts</title>
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
   <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-mtS696VnV9qeIoC8w/PrPoRzJ5gwydRVn0oQ9b+RJOPxE1Z1jXuuJcyeNxvNZhdx" crossorigin="anonymous">
+  <link href="../node_modules/sweetalert2/dist/sweetalert2.css" rel="stylesheet">
 </head>
 <body >
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -19,10 +20,10 @@
               <a class="nav-link" href="../template.html">Home <span class="sr-only">(atual)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../listagem/listagem.html">Listagem</a>
+              <a class="nav-link" href="cadastro.html">Cadastro</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cadastro.html">Cadastro</a>
+              <a class="nav-link" href="../listagem/listagem.html">Listagem</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../edicao/edicao.html">Editar</a>
@@ -36,22 +37,22 @@
       </nav>
 
       <div class="jumbotron d-flex justify-content-center" style="text-align: center">
-        <form>
-                <div class="form-group">
+        <form name="postCad">
+                <!-- <div class="form-group">
                     <label for="inputId">Insira o ID</label>
-                    <input type="id" class="form-control" id="inputId" aria-describedby="idHelp" placeholder="ID do Post">
+                    <input name="id" type="id" class="form-control sm-3" id="inputId" aria-describedby="idHelp" placeholder="ID do Post">
                     <small id="idHelp" class="form-text text-muted">o Id é único para cada Post</small>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="inputTitle">Insira o Titúlo do Post</label>
-                    <input type="title" class="form-control" id="inputTitle" placeholder="Titulo do Post">
+                    <input name="title" type="title" class="form-control sm-3" id="inputTitle" placeholder="Titulo do Post" required>
                 </div>
                 <div class="form-group">
                     <label for="inputAuthor">Insira o Autor do Post</label>
-                    <input type="author" class="form-control" id="inputAuthor" placeholder="Autor do Post">
+                    <input name="author" type="author" class="form-control sm-3" id="inputAuthor" placeholder="Autor do Post" required>
                 </div>
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary" onclick="cadastrar()">Enviar</button>
                 </div>
             
         </form>
@@ -60,5 +61,7 @@
   <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="../node_modules/popper.js/dist/popper.min.js"></script>
   <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+  <script src="cadastro.js"></script>
 </body>
 </html>
