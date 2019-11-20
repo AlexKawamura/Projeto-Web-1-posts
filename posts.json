@@ -1,14 +1,14 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "teste",
+      "author": "teste",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "another post",
-      "author": "Mike"
+      "title": "teste2",
+      "author": "teste2",
+      "id": 2
     },
     {
       "title": "asdas",

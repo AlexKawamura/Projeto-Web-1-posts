@@ -6,9 +6,8 @@
   <title>Projeto de Web: Posts</title>
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
   <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-mtS696VnV9qeIoC8w/PrPoRzJ5gwydRVn0oQ9b+RJOPxE1Z1jXuuJcyeNxvNZhdx" crossorigin="anonymous">
-  <link href="../node_modules/sweetalert2/dist/sweetalert2.css" rel="stylesheet">
 </head>
-<body >
+<body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <span class="navbar-brand mb-0 h1">Posts</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,13 +19,13 @@
               <a class="nav-link" href="../template.html">Home <span class="sr-only">(atual)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cadastro.html">Cadastro</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="../listagem/listagem.html">Listagem</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../edicao/edicao.html">Editar</a>
+              <a class="nav-link" href="../cadastro/cadastro.html">Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../edicao/edicao.html" >Editar</a>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
@@ -37,22 +36,23 @@
       </nav>
 
       <div class="jumbotron d-flex justify-content-center" style="text-align: center">
-        <form name="postCad">
-                <!-- <div class="form-group">
+        <h1>Edição</h1>
+        <form>
+                <div class="form-group">
                     <label for="inputId">Insira o ID</label>
-                    <input name="id" type="id" class="form-control sm-3" id="inputId" aria-describedby="idHelp" placeholder="ID do Post">
+                    <input type="id" class="form-control" id="inputId" aria-describedby="idHelp" placeholder="ID do Post">
                     <small id="idHelp" class="form-text text-muted">o Id é único para cada Post</small>
-                </div> -->
+                </div>
                 <div class="form-group">
                     <label for="inputTitle">Insira o Titúlo do Post</label>
-                    <input name="title" type="title" class="form-control sm-3" id="inputTitle" placeholder="Titulo do Post" required>
+                    <input type="title" class="form-control" id="inputTitle" placeholder="Titulo do Post">
                 </div>
                 <div class="form-group">
                     <label for="inputAuthor">Insira o Autor do Post</label>
-                    <input name="author" type="author" class="form-control sm-3" id="inputAuthor" placeholder="Autor do Post" required>
+                    <input type="author" class="form-control" id="inputAuthor" placeholder="Autor do Post">
                 </div>
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary" onclick="cadastrar()">Enviar</button>
+                    <button type="button" class="btn btn-primary" onclick="editar()">Enviar</button>
                 </div>
             
         </form>
@@ -61,7 +61,6 @@
   <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="../node_modules/popper.js/dist/popper.min.js"></script>
   <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
-  <script src="cadastro.js"></script>
+  <script src="edicao.js"></script>
 </body>
 </html>
