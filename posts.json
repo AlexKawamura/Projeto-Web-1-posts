@@ -1,59 +1,29 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "teste",
+      "author": "teste",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "another post",
-      "author": "Mike"
+      "title": "teste2",
+      "author": "teste2",
+      "id": 2
     },
     {
-      "title": "asdas",
-      "author": "asda",
+      "title": "Alex",
+      "author": "Alalao",
       "id": 3
     },
     {
-      "title": "Teste",
-      "author": "Sam",
+      "title": "Alex",
+      "author": "Alalao",
       "id": 4
     },
     {
-      "title": "Programação WEB",
-      "author": "Samuel",
+      "title": "teste",
+      "author": "teste",
       "id": 5
-    },
-    {
-      "title": "Fazendo TCC",
-      "author": "Arnold",
-      "id": 6
-    },
-    {
-      "title": "Neia",
-      "author": "Lully",
-      "id": 7
-    },
-    {
-      "title": "Laraia",
-      "author": "Teste",
-      "id": 8
-    },
-    {
-      "title": "Pagina",
-      "author": "La",
-      "id": 9
-    },
-    {
-      "title": "Paginando",
-      "author": "Aquele",
-      "id": 10
-    },
-    {
-      "title": "Ultimo",
-      "author": "pra tester",
-      "id": 11
     }
   ]
 }
