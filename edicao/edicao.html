@@ -41,7 +41,7 @@
                 <h3 class="display-6 text-center">Editar Post</h3>
                 <div class="form-group">
                     <label for="inputId">Insira o ID</label>
-                    <input type="id" class="form-control" id="inputId" aria-describedby="idHelp" placeholder="ID do Post">
+                    <input oninput="limpar()" type="id" class="form-control" id="inputId" aria-describedby="idHelp" placeholder="ID do Post">
                     <small id="idHelp" class="form-text text-muted">o Id é único para cada Post</small>
                     <div class="form-group text-center">
                       <button type="button" class="btn btn-info" onclick="procurar(inputId.value)">Procurar</button>

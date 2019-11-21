@@ -39,10 +39,24 @@ function procurar(idPost) {
 	xhttp.send();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        var json = JSON.parse(this.response); //Salva um registro na variavel json
-		titulo.value = json.title;
-		autor.value = json.author;
+		var json = JSON.parse(this.response); //Salva um registro na variavel json
+		if (json.title === undefined) {
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Preencha o campo ID!',
+			  })
+		} else {
+			titulo.value = json.title;
+			autor.value = json.author;
+		}
+		
         } 
 	}  
     
+}
+
+function limpar() {
+	document.getElementById("inputTitle").value = "";
+	document.getElementById("inputAuthor").value = "";
 }
