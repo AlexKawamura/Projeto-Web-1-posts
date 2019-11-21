@@ -27,9 +27,10 @@ function listar(pagina) {
             var texto_id = document.createTextNode(json[i].id);
             var texto_title = document.createTextNode(json[i].title);
             var texto_author = document.createTextNode(json[i].author);
-            var icon_del = document.createElement("i");
-            icon_del.setAttribute("class", "fa fa-trash");
-            icon_del.setAttribute("onclick", "deletar()");
+            var icon_del = document.createElement("button");
+            icon_del.setAttribute("id","delBotao"+i);
+            icon_del.setAttribute("class", "fa fa-trash btn btn-danger");
+            icon_del.setAttribute("onclick", "deletar(this.id)");
 
             id.appendChild(texto_id);
             title.appendChild(texto_title);
@@ -49,8 +50,11 @@ function listar(pagina) {
     xhttp.send();
   }
 
-  function deletar() {
-    
+  function deletar(idBotao) { // id do botão passado como parametro
+    var delBotao = document.getElementById(idBotao); // pega o elemento do id
+    var linha = delBotao.closest("tr").childNodes; // pega a linha mais próxima do botão
+    var idPost = linha[0].textContent // pega o conteudo da coluna th onde está o id
+    console.log(idPost);
     Swal.fire({
       title: 'O Arquivo será deletado. Tem certeza disso?',
       text: "Não será possível reverter esta ação!",
@@ -61,11 +65,22 @@ function listar(pagina) {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Sim, delete!'
     }).then((result) => {
-      if (result.value) {
+      if (result.value) { // começa o DELETE no json
+        var xhr = new XMLHttpRequest();
+        xhr.open("DELETE", "http://localhost:3000/posts/"+idPost, true);
+        xhr.onload = function () {
+          var posts = JSON.parse(xhr.responseText);
+          if (xhr.readyState == 4 && xhr.status == "200") {
+            console.table(posts);
+          } else {
+            console.error(posts);
+          }
+        }
+        xhr.send(null);
         Swal.fire(
           'Deletado!',
           'O Post foi deletado',
-          'success'
+          'success',
         )
       }
     })

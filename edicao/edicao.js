@@ -9,7 +9,6 @@ function editar() {
 	xhttp.open("PUT", "http://localhost:3000/posts/"+id, true);
 	xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
 	xhttp.onload = function () {
-		var users = JSON.parse(xhttp.responseText);
 		if (xhttp.readyState == 4 && xhttp.status == "200") {
 			Swal.fire({
 				title: "Parabens!",
