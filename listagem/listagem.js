@@ -81,7 +81,9 @@ function listar(pagina) {
           'Deletado!',
           'O Post foi deletado',
           'success',
+          'Beleza!'
         )
+        
       }
     })
   }
