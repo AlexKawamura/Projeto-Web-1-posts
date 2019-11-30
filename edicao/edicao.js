@@ -50,7 +50,13 @@ function procurar(idPost) {
 			autor.value = json.author;
 		}
 		
-        } 
+        } else {
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Post não encontrado!',
+			  })
+		}
 	}  
     
 }
