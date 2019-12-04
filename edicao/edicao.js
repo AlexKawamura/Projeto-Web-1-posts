@@ -16,7 +16,7 @@ function editar() {
 				icon: "success",
 				confirmButtonText: "Aww yeah!",
 				onClose: () => {
-					document.location.reload(true)//Recarrega a página após o usuário confirmar o cadastro
+					document.location.reload(true)// Recarrega a página após o usuário confirmar o cadastro
 				}
 			});
 		} else if (xhttp.status == "404"){
@@ -38,7 +38,7 @@ function procurar(idPost) {
 	xhttp.send();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-		var json = JSON.parse(this.response); //Salva um registro na variavel json
+		var json = JSON.parse(this.response); // Salva um registro na variavel json
 		if (json.title === undefined) {
 			Swal.fire({
 				icon: 'error',
