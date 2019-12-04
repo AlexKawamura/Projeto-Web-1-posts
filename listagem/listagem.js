@@ -1,20 +1,20 @@
-var records_per_page = 2;
+var itens_por_pag = 3;
 var json = {};
 
-//Função para listar os Posts cadastrados
+// Função para listar os Posts cadastrados
 function listar(pagina) {
-  //Fazendo o request AJAX para o json-server
+  // Fazendo o request AJAX para o json-server
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      json = JSON.parse(this.response); //Salva um registro na variavel json
-      console.log(json);
+      json = JSON.parse(this.response); // Salva um registro na variavel json
       var i;
 
       var corpo_tabela = document.querySelector("tbody");
-      var new_tbody = document.createElement('tbody');
+      var nova_tabela = document.createElement('tbody');
 
-      for(var i = (pagina-1) * records_per_page; i < (pagina * records_per_page) && i < json.length; i++){//For para preencher a tabela
+      // For para preencher a tabela com base na página e na quantidade de itens por página
+      for (var i = (pagina-1) * itens_por_pag; i < (pagina * itens_por_pag) && i < json.length; i++) {
         var linha = document.createElement("tr");
         var id = document.createElement("th");
         var title = document.createElement("td");
@@ -39,10 +39,27 @@ function listar(pagina) {
         linha.appendChild(title);
         linha.appendChild(author);
         linha.appendChild(del);
-        new_tbody.appendChild(linha);
+        nova_tabela.appendChild(linha);
       }
-      console.log(corpo_tabela.parentNode);
-      corpo_tabela.parentNode.replaceChild(new_tbody, corpo_tabela);
+      // Substitui a tabela atiga pela nova
+      corpo_tabela.parentNode.replaceChild(nova_tabela, corpo_tabela);
+
+      var btn_anterior = document.getElementById("anterior");
+      var btn_proximo = document.getElementById("proximo");
+      var numPaginas = Math.ceil(json.length / itens_por_pag);
+
+      // Desabilita o botão anterior quando chegar na primeira página
+      if (pagina == 1) {
+        btn_anterior.setAttribute("class", "page-item disabled");
+      } else {
+        btn_anterior.setAttribute("class", "page-item");
+      }
+      // Desabilita o botão próximo quando chegar na última página
+      if (pagina == numPaginas) {
+        btn_proximo.setAttribute("class", "page-item disabled");
+      } else {
+        btn_proximo.setAttribute("class", "page-item");
+      }
 
     }
   };
@@ -50,11 +67,10 @@ function listar(pagina) {
   xhttp.send();
 }
 
-function deletar(idBotao) { // id do botão passado como parametro
-  var delBotao = document.getElementById(idBotao); // pega o elemento do id
-  var linha = delBotao.closest("tr").childNodes; // pega a linha mais próxima do botão
-  var idPost = linha[0].textContent // pega o conteudo da coluna th onde está o id
-  console.log(idPost);
+function deletar(idBotao) { // Id do botão passado como parametro
+  var delBotao = document.getElementById(idBotao); // Pega o elemento do id
+  var linha = delBotao.closest("tr").childNodes; // Pega a linha mais próxima do botão
+  var idPost = linha[0].textContent // Pega o conteudo da coluna th onde está o id
   Swal.fire({
     title: 'O Arquivo será deletado. Tem certeza disso?',
     text: "Não será possível reverter esta ação!",
@@ -65,7 +81,7 @@ function deletar(idBotao) { // id do botão passado como parametro
     cancelButtonColor: '#d33',
     confirmButtonText: 'Sim, delete!'
   }).then((result) => {
-    if (result.value) { // começa o DELETE no json
+    if (result.value) { // Começa o DELETE no json
       var xhr = new XMLHttpRequest();
       xhr.open("DELETE", "http://localhost:3000/posts/"+idPost, true);
       xhr.onload = function () {
@@ -88,6 +104,7 @@ function deletar(idBotao) { // id do botão passado como parametro
   })
 }
 
+// Ao carregar a página
 window.onload = function() {
   var xhttp = new XMLHttpRequest();
   
@@ -95,9 +112,9 @@ window.onload = function() {
     if (this.readyState == 4 && this.status == 200) {
       json = JSON.parse(this.response);
 
-      console.log(json);
-
+      // Listagem da primeria página
       listar(1);
+      // Função para calcular e criar o número de páginas
       calcPages(json);
     }
   };
@@ -106,12 +123,10 @@ window.onload = function() {
 }
 
 function calcPages(json) {
-  console.log(json);
-  console.log(records_per_page);
-  var pages = Math.ceil(json.length / records_per_page);
-  console.log('pages'+pages);
+  var pages = Math.ceil(json.length / itens_por_pag); // Calcula a quantidade de páginas
   var i;
 
+  // For para criar a paginação
   for(i = pages; i >= 1; i--) {
     var page_item = document.createElement('li');
     var page_link = document.createElement('a');
@@ -130,24 +145,3 @@ function calcPages(json) {
   }
 
 }
-
-
-//   function apaga(idDel) {
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.open("DELETE", "http://localhost:3000/posts/"+idDel, true);
-//     xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
-//     xhttp.onload = function () {
-
-// 		if (xhttp.readyState == 4 && xhttp.status == "200") {
-// 			Swal.fire({
-// 				title: "Parabens!",
-// 				text: "Post editado com sucesso!",
-// 				icon: "success",
-// 				confirmButtonText: "Aww yeah!",
-// 				onClose: () => {
-// 					document.location.reload(true)//Recarrega a página após o usuário confirmar o cadastro
-// 				}
-// 			});
-// 	}
-// 	xhttp.send(json);
-// }
